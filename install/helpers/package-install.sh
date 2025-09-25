@@ -3,7 +3,7 @@
 # Function to try installing a package with pacman, yay, then paru as fallbacks
 try_install_package() {
     local pkg="$1"
-    
+
     # First try pacman
     if pacman -Si "$pkg" &>/dev/null; then
         if sudo pacman -S --noconfirm --needed "$pkg"; then
@@ -13,7 +13,7 @@ try_install_package() {
             echo "[FAILED] $pkg (pacman failed)"
         fi
     fi
-    
+
     # If pacman failed or package not found, try yay
     if command -v yay &>/dev/null; then
         echo "[TRYING] $pkg (yay)"
@@ -28,7 +28,7 @@ try_install_package() {
             echo "[NOT FOUND] $pkg (yay)"
         fi
     fi
-    
+
     # If yay failed or not available, try paru
     if command -v paru &>/dev/null; then
         echo "[TRYING] $pkg (paru)"
@@ -43,7 +43,7 @@ try_install_package() {
             echo "[NOT FOUND] $pkg (paru)"
         fi
     fi
-    
+
     # All methods failed
     echo "[FAILED] $pkg (all methods failed)"
     return 1
@@ -52,21 +52,25 @@ try_install_package() {
 # Function to check if a package is available in any repository
 check_package_availability() {
     local pkg="$1"
-    
+
     # Check pacman first
     if pacman -Si "$pkg" &>/dev/null; then
         return 0
     fi
-    
+
     # Check yay
     if command -v yay &>/dev/null && yay -Si "$pkg" &>/dev/null; then
         return 0
     fi
-    
+
     # Check paru
     if command -v paru &>/dev/null && paru -Si "$pkg" &>/dev/null; then
         return 0
     fi
-    
+
     return 1
 }
+
+# Export functions so they're available in subshells
+export -f try_install_package
+export -f check_package_availability

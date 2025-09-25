@@ -1,3 +1,7 @@
+# Set default applications for installation
+export TERMINAL=alacritty
+export EDITOR=nvim
+
 # Ensure we have gum available
 if ! command -v gum &>/dev/null; then
   sudo pacman -S --needed --noconfirm gum
@@ -71,3 +75,9 @@ show_cursor() {
 hide_cursor() {
   printf "\033[?25l" # Hide cursor
 }
+
+
+# Export functions so they're available in subshells
+export -f clear_logo
+export -f show_cursor
+export -f hide_cursor

@@ -122,8 +122,10 @@ run_logged() {
 
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting: $script" >>"$OMARCHY_INSTALL_LOG_FILE"
 
-  # Use bash -c to create a clean subshell
-  bash -c "source '$script'" </dev/null >>"$OMARCHY_INSTALL_LOG_FILE" 2>&1
+  # Use a subshell instead of bash -c to preserve the current environment
+  (
+    source "$script"
+  ) </dev/null >>"$OMARCHY_INSTALL_LOG_FILE" 2>&1
 
   local exit_code=$?
 
