@@ -9,6 +9,12 @@ export OMARCHY_INSTALL="$OMARCHY_PATH/install"
 export OMARCHY_INSTALL_LOG_FILE="/var/log/omarchy-install.log"
 export PATH="$OMARCHY_PATH/bin:$PATH"
 
+# Install basic fonts that support Unicode
+sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
+sudo pacman -S ttf-cascadia-mono-nerd
+
+fc-cache -fv
+
 # Install
 source "$OMARCHY_INSTALL/helpers/all.sh"
 source "$OMARCHY_INSTALL/preflight/all.sh"
