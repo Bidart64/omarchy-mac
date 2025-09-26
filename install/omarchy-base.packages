@@ -130,10 +130,6 @@ xdg-desktop-portal-hyprland
 xmlstarlet
 yaru-icon-theme
 zoxide
-
-OPTIONAL:
-# Optional packages for enhanced functionality
-# Users can choose to install these during setup
 xournalpp
 kdenlive
 obs-studio
@@ -144,3 +140,7 @@ pinta
 libreoffice
 localsend
 typora
+
+OPTIONAL:
+# Optional packages for enhanced functionality
+# Users can choose to install these during setup

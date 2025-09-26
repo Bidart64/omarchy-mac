@@ -25,7 +25,7 @@ After installation, boot into Arch Linux and perform the initial setup:
 1. **Log into root** - username and password: `root`
 2. **Configure wifi** - Run `nmtui` for network setup
 3. **Update system** - Run `pacman -Syu`
-4. **Install essential packages** - Run `pacman -S sudo git base-devel`
+4. **Install essential packages** - Run `pacman -S sudo git base-devel neovim gum`
 
 ## Step 3: Create User Account
 
