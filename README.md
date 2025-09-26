@@ -57,7 +57,7 @@ As your new user, set up the AUR helper and install Omarchy:
 
 3. **Clone and setup Omarchy**:
    ```bash
-   git clone https://github.com/malik-na/omarchy-mac.git
+   git clone https://github.com/Bidart64/omarchy-mac.git
    mv omarchy-mac omarchy
    cd omarchy
    bash install.sh
