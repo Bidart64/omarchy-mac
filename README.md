@@ -47,15 +47,22 @@ As your new user, set up the AUR helper and install Omarchy:
    git clone https://aur.archlinux.org/yay.git
    cd yay
    makepkg -si
+   cd ..
+   ```
+2. **Install yay AUR helper**:
+   ```bash
+   git clone https://aur.archlinux.org/paru.git
+   cd paru
+   makepkg -si
    ```
 
-2. **Create directories**:
+3. **Create directories**:
    ```bash
    mkdir -p ~/.local/share
    cd ~/.local/share
    ```
 
-3. **Clone and setup Omarchy**:
+4. **Clone and setup Omarchy**:
    ```bash
    git clone https://github.com/Bidart64/omarchy-mac.git
    mv omarchy-mac omarchy
